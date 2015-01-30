@@ -50,6 +50,11 @@ public class WebViewProxy extends TiViewProxy
 		return view;
 	}
 
+	public WebView getWebView()
+	{
+		return (WebView) peekView();
+	}
+
 	// Handle creation options
 	@Override
 	public void handleCreationDict(KrollDict options)
@@ -73,6 +78,42 @@ public class WebViewProxy extends TiViewProxy
 		super.handleCreationArgs(createdInModule, args);
 	}
 
+	@Kroll.method
+	public boolean canGoBack()
+	{
+		WebView view = getWebView();
+		if (view != null) {
+			return view.canGoBack();
+		}
+		return false;
+	}
+
+	@Kroll.method
+	public boolean canGoForward()
+	{
+		WebView view = getWebView();
+		if (view != null) {
+			return view.canGoForward();
+		}
+		return false;
+	}
+
+	@Kroll.method
+	public void goBack()
+	{
+		if (canGoBack()) {
+			getWebView().goBack();
+		}
+	}
+
+	@Kroll.method
+	public void goForward()
+	{
+		if (canGoForward()) {
+			getWebView().goForward();
+		}
+	}
+
 	@Kroll.setProperty @Kroll.method
 	public void setUrl(String url) {
 		setPropertyAndFire("url", url);
@@ -85,7 +126,7 @@ public class WebViewProxy extends TiViewProxy
 
 	@Kroll.method
 	public Object evalJS(String code) {
-		WebView view = (WebView) peekView();
+		WebView view = getWebView();
 
 		if (view == null) {
 			Log.e(LCAT, "evalJS failed, view not available");
@@ -98,7 +139,7 @@ public class WebViewProxy extends TiViewProxy
 
 	@Kroll.method
 	public void evalAsync(final String code, @Kroll.argument(optional=true) KrollFunction callback) {
-		WebView view = (WebView) peekView();
+		WebView view = getWebView();
 
 		if (view == null) {
 			Log.e(LCAT, "evalAsync failed, view not available");
@@ -123,7 +164,7 @@ public class WebViewProxy extends TiViewProxy
 		getActivity().runOnUiThread(new Runnable () {
 			@Override
 			public void run() {
-				WebView view = (WebView) peekView();
+				WebView view = getWebView();
 				if (view != null) {
 					XWalkView webView = (XWalkView) view.getNativeView();
 					if (webView != null) {

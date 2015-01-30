@@ -31,6 +31,7 @@ import android.content.Intent;
 import android.graphics.Color;
 
 import org.xwalk.core.XWalkView;
+import org.xwalk.core.XWalkNavigationHistory.Direction;
 
 public class WebView extends TiUIView implements OnLifecycleEvent
 {
@@ -105,17 +106,43 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		super.propertyChanged(key, oldValue, newValue, proxy);
 	}
 
+	public XWalkView getXWalkView()
+	{
+		return (XWalkView) getNativeView();
+	}
+
+	public boolean canGoBack()
+	{
+		return getXWalkView().getNavigationHistory().canGoBack();
+	}
+
+	public boolean canGoForward()
+	{
+		return getXWalkView().getNavigationHistory().canGoForward();
+	}
+
+	public void goBack()
+	{
+		getXWalkView().getNavigationHistory().navigate(Direction.BACKWARD, 1);
+	}
+
+	public void goForward()
+	{
+		getXWalkView().getNavigationHistory().navigate(Direction.FORWARD, 1);
+	}
+
+
 	public void setUrl(String url)
 	{
 		Log.d(LCAT, "Loading new url: " + url);
-		XWalkView view = (XWalkView)getNativeView();
+		XWalkView view = getXWalkView();
 		view.load(url, null);
 	}
 
 	public void setHtml(String html)
 	{
 		Log.d(LCAT, "Loading html string");
-		XWalkView view = (XWalkView)getNativeView();
+		XWalkView view = getXWalkView();
 		view.load(null, html);
 	}
 
@@ -132,7 +159,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	@Override
 	public void onPause(Activity activity) {
 		Log.i(LCAT, "onPause");
-		XWalkView view = (XWalkView) getNativeView();
+		XWalkView view = getXWalkView();
 		if (view != null) {
 			Log.i(LCAT, "onPause view found");
 			view.pauseTimers();
@@ -143,7 +170,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	@Override
 	public void onResume(Activity activity) {
 		Log.i(LCAT, "onResume");
-		XWalkView view = (XWalkView) getNativeView();
+		XWalkView view = getXWalkView();
 		if (view != null) {
 			Log.i(LCAT, "onResume view found");
 			view.resumeTimers();
@@ -154,7 +181,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	@Override
 	public void onDestroy(Activity activity) {
 		Log.i(LCAT, "onDestroy");
-		XWalkView view = (XWalkView) getNativeView();
+		XWalkView view = getXWalkView();
 		if (view != null) {
 			Log.i(LCAT, "onDestroy view found");
 			view.onDestroy();
@@ -167,7 +194,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		XWalkView view = (XWalkView) getNativeView();
+		XWalkView view = getXWalkView();
 		Log.i(LCAT, "onActivityResult");
 		if (view != null) {
 			Log.i(LCAT, "onActivityResult view found");
@@ -177,7 +204,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 
 	public void onNewIntent(Intent intent) {
 		Log.i(LCAT, "onNewIntent");
-		XWalkView view = (XWalkView) getNativeView();
+		XWalkView view = getXWalkView();
 		if (view != null) {
 			Log.i(LCAT, "onNewIntent view found");
 			view.onNewIntent(intent);
