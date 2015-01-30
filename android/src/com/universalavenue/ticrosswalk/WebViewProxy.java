@@ -34,8 +34,24 @@ import android.webkit.ValueCallback;
 @Kroll.proxy(creatableInModule = TiCrosswalkModule.class)
 public class WebViewProxy extends TiViewProxy
 {
-	// Standard Debugging variables
 	private static final String LCAT = "TiCrosswalk";
+
+	private static final int MSG_FIRST_ID = TiViewProxy.MSG_LAST_ID + 1;
+
+	private static final int MSG_GO_BACK = MSG_FIRST_ID + 101;
+	private static final int MSG_GO_FORWARD = MSG_FIRST_ID + 102;
+	private static final int MSG_RELOAD = MSG_FIRST_ID + 103;
+	private static final int MSG_STOP_LOADING = MSG_FIRST_ID + 104;
+	private static final int MSG_SET_HTML = MSG_FIRST_ID + 105;
+	private static final int MSG_SET_USER_AGENT = MSG_FIRST_ID + 106;
+	private static final int MSG_GET_USER_AGENT = MSG_FIRST_ID + 107;
+	private static final int MSG_CAN_GO_BACK = MSG_FIRST_ID + 108;
+	private static final int MSG_CAN_GO_FORWARD = MSG_FIRST_ID + 109;
+	private static final int MSG_RELEASE = MSG_FIRST_ID + 110;
+	private static final int MSG_PAUSE = MSG_FIRST_ID + 111;
+	private static final int MSG_RESUME = MSG_FIRST_ID + 112;
+
+	protected static final int MSG_LAST_ID = MSG_FIRST_ID + 999;
 
 	public WebViewProxy() {
 		super();
@@ -55,27 +71,63 @@ public class WebViewProxy extends TiViewProxy
 		return (WebView) peekView();
 	}
 
-	// Handle creation options
+
 	@Override
-	public void handleCreationDict(KrollDict options)
+	public boolean handleMessage(Message msg)
 	{
-		// This method is called from handleCreationArgs if there is at least
-		// argument specified for the proxy creation call and the first argument
-		// is a KrollDict object.
-		// Calling the superclass method ensures that the properties specified
-		// in the dictionary are properly set on the proxy object.
-		super.handleCreationDict(options);
-	}
-
-	public void handleCreationArgs(KrollModule createdInModule, Object[] args)
-	{
-		// This method is one of the initializers for the proxy class. The arguments
-		// for the create call are passed as an array of objects. If your proxy
-		// simply needs to handle a single KrollDict argument, use handleCreationDict.
-		// The superclass method calls the handleCreationDict if the first argument
-		// to the create method is a dictionary object.
-
-		super.handleCreationArgs(createdInModule, args);
+		if (peekView() != null) {
+			switch (msg.what) {
+				case MSG_GO_BACK:
+					goBack();
+					return true;
+				case MSG_GO_FORWARD:
+					goForward();
+					return true;
+				// case MSG_RELOAD:
+				// 	getWebView().reload();
+				// 	return true;
+				// case MSG_STOP_LOADING:
+				// 	getWebView().stopLoading();
+				// 	return true;
+				// case MSG_SET_USER_AGENT:
+				// 	getWebView().setUserAgentString(msg.obj.toString());
+				// 	return true;
+				// case MSG_GET_USER_AGENT: {
+				// 	AsyncResult result = (AsyncResult) msg.obj;
+				// 	result.setResult(getWebView().getUserAgentString());
+				// 	return true;
+				// }
+				case MSG_CAN_GO_BACK: {
+					AsyncResult result = (AsyncResult) msg.obj;
+					result.setResult(canGoBack());
+					return true;
+				}
+				case MSG_CAN_GO_FORWARD: {
+					AsyncResult result = (AsyncResult) msg.obj;
+					result.setResult(canGoForward());
+					return true;
+				}
+				// case MSG_RELEASE:
+				// 	TiUIWebView webView = (TiUIWebView) peekView();
+				// 	if (webView != null) {
+				// 		webView.destroyWebViewBinding();
+				// 	}
+				// 	super.releaseViews();
+				// 	return true;
+				// case MSG_PAUSE:
+				// 	getWebView().pauseWebView();
+				// 	return true;
+				// case MSG_RESUME:
+				// 	getWebView().resumeWebView();
+				// 	return true;
+				// case MSG_SET_HTML:
+				// 	String html = TiConvert.toString(getProperty(TiC.PROPERTY_HTML));
+				// 	HashMap<String, Object> d = (HashMap<String, Object>) getProperty(OPTIONS_IN_SETHTML);
+				// 	getWebView().setHtml(html, d);
+				// 	return true;
+			}
+		}
+		return super.handleMessage(msg);
 	}
 
 	@Kroll.method
@@ -83,7 +135,11 @@ public class WebViewProxy extends TiViewProxy
 	{
 		WebView view = getWebView();
 		if (view != null) {
-			return view.canGoBack();
+			if (TiApplication.isUIThread()) {
+				return view.canGoBack();
+			} else {
+				return (Boolean) TiMessenger.sendBlockingMainMessage(getMainHandler().obtainMessage(MSG_CAN_GO_BACK));
+			}
 		}
 		return false;
 	}
@@ -93,7 +149,11 @@ public class WebViewProxy extends TiViewProxy
 	{
 		WebView view = getWebView();
 		if (view != null) {
-			return view.canGoForward();
+			if (TiApplication.isUIThread()) {
+				return view.canGoForward();
+			} else {
+				return (Boolean) TiMessenger.sendBlockingMainMessage(getMainHandler().obtainMessage(MSG_CAN_GO_FORWARD));
+			}
 		}
 		return false;
 	}
@@ -101,7 +161,9 @@ public class WebViewProxy extends TiViewProxy
 	@Kroll.method
 	public void goBack()
 	{
-		if (canGoBack()) {
+		if (!TiApplication.isUIThread()) {
+			getMainHandler().sendEmptyMessage(MSG_GO_BACK);
+		} else if (canGoBack()) {
 			getWebView().goBack();
 		}
 	}
@@ -109,7 +171,9 @@ public class WebViewProxy extends TiViewProxy
 	@Kroll.method
 	public void goForward()
 	{
-		if (canGoForward()) {
+		if (!TiApplication.isUIThread()) {
+			getMainHandler().sendEmptyMessage(MSG_GO_FORWARD);
+		} else if (canGoForward()) {
 			getWebView().goForward();
 		}
 	}
