@@ -38,6 +38,9 @@ public class TiCrosswalkModule extends KrollModule
 	{
 		XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
 		XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
+		XWalkPreferences.setValue(XWalkPreferences.ALLOW_UNIVERSAL_ACCESS_FROM_FILE, true);
+		XWalkPreferences.setValue(XWalkPreferences.JAVASCRIPT_CAN_OPEN_WINDOW, false);
+		XWalkPreferences.setValue(XWalkPreferences.SUPPORT_MULTIPLE_WINDOWS, false);
 	}
 
 }
