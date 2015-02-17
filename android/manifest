@@ -7,9 +7,10 @@ apiversion: 2
 description: TiCrosswalk
 author: Jonatan Lundin
 license: Specify your license
-copyright: Copyright (c) 2015 by Your Company
+copyright: Copyright (c) 2015 by Universal Avenue AB
 
 respackage: org.xwalk.core
+architectures: armeabi-v7a
 
 # these should not be edited
 name: TiCrosswalk
