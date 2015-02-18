@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: TiCrosswalk
+author: Jonatan Lundin
+license: Specify your license
+copyright: Copyright (c) 2015 by Your Company
+
+# these should not be edited
+name: TiCrosswalk
+moduleid: com.universalavenue.ticrosswalk
+guid: 86179020-cd8f-4dfb-8749-378e70b60377
+platform: iphone
+minsdk: 3.4.1.GA
