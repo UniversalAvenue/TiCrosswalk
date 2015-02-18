@@ -23,6 +23,8 @@
         ENSURE_ARG_AT_INDEX(code, args, 0, NSString);
         ENSURE_ARG_OR_NIL_AT_INDEX(callback, args, 1, KrollCallback);
         
+        code = [NSString stringWithFormat:@"JSON.stringify(%@)", code];
+
         res = [[(TiUIWebView*)[self view] stringByEvaluatingJavaScriptFromString:code] retain];
         NSLog(@"evalAsync: \"%@\" -> %@", code, res);
         
