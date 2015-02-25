@@ -23,16 +23,22 @@
         ENSURE_ARG_AT_INDEX(code, args, 0, NSString);
         ENSURE_ARG_OR_NIL_AT_INDEX(callback, args, 1, KrollCallback);
         
-        code = [NSString stringWithFormat:@"JSON.stringify(%@)", code];
+        code = [[NSString stringWithFormat:@"JSON.stringify(%@)", code] retain];
+
+        if (callback != nil) {
+            [callback retain];
+        }
 
         res = [[(TiUIWebView*)[self view] stringByEvaluatingJavaScriptFromString:code] retain];
         NSLog(@"evalAsync: \"%@\" -> %@", code, res);
         
-        if (callback) {
+        if (callback != nil) {
             [callback call:[NSArray arrayWithObject:res] thisObject:self];
+            [callback release];
         }
         
-        [res autorelease];
+        [code release];
+        [res release];
     } else {
         [self performSelectorOnMainThread:@selector(evalAsync:) withObject:args waitUntilDone:NO];
     }
