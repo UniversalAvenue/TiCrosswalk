@@ -143,7 +143,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	{
 		Log.d(LCAT, "Loading html string");
 		XWalkView view = getXWalkView();
-		view.load(null, html);
+		view.load("file://", html);
 	}
 
 	public String getJSValue(String expression)
