@@ -64,6 +64,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		view.setResourceClient(resourceClient);
 		view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		view.setBackgroundColor(0);
+		view.setFocusableInTouchMode(false);
 
 		// Set the view as the native view. You must set the native view
 		// for your view to be rendered correctly.
