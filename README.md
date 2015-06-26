@@ -45,7 +45,9 @@ webView.evalAsync(code, function (res) {
 
 The iOS version of this module simply extends the existing Titanium WebView, meaning you can use the same APIs as on Android.
 
-**Note:** The behavior of evalAsync differ a bit between platforms. In order for things to work cross platform you need to wrap your call in an IIFE (like above) and make sure to skip the final semicolon! See issue #6 for details.
+**Note:** The behavior of evalAsync differ a bit between platforms. In order for things to work cross platform you need to wrap your call in an IIFE (like above) and make sure to skip the final semicolon! 
+
+See [issue #6](https://github.com/UniversalAvenue/TiCrosswalk/issues/6) for details.
 
 
 ## Contributors
