@@ -2,8 +2,8 @@
 	<id>com.universalavenue.xwtest</id>
 	<name>xwtest</name>
 	<version>1.0</version>
-	<publisher>not specified</publisher>
-	<url>http://</url>
+	<publisher>UniversalAvenue</publisher>
+	<url>https://github.com/UniversalAvenue/TiCrosswalk</url>
 	<description/>
 	<copyright>not specified</copyright>
 	<icon>appicon.png</icon>
@@ -39,15 +39,6 @@
 	</ios>
 	<android xmlns:android="http://schemas.android.com/apk/res/android">
 	</android>
-	<mobileweb>
-		<precache>
-		</precache>
-		<splash>
-			<enabled>true</enabled>
-			<inline-css-images>true</inline-css-images>
-		</splash>
-		<theme>default</theme>
-	</mobileweb>
 	<modules>
 		<module platform="android">com.universalavenue.ticrosswalk</module>
 	</modules>
@@ -55,10 +46,11 @@
 		<target device="android">true</target>
 		<target device="blackberry">false</target>
 		<target device="ipad">false</target>
-		<target device="iphone">false</target>
+		<target device="iphone">true</target>
 		<target device="mobileweb">false</target>
 	</deployment-targets>
-	<sdk-version>3.4.1.GA</sdk-version>
-<plugins><plugin version="1.0">ti.alloy</plugin>
+	<sdk-version>3.5.1.GA</sdk-version>
+<plugins>
+    <plugin version="1.0">ti.alloy</plugin>
 </plugins>
 </ti:app>

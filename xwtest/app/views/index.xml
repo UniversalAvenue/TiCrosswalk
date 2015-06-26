@@ -1,4 +1,6 @@
 <Alloy>
 	<Window class="container">
+        <WebView id="webView" platform="ios" />
+        <WebView id="webView" platform="android" module="com.universalavenue.ticrosswalk" />
 	</Window>
 </Alloy>
