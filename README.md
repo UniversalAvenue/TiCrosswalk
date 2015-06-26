@@ -6,6 +6,48 @@ A cross platform web view extension/replacement for Titanium Mobile that uses th
 [Crosswalk WebView](https://crosswalk-project.org/) on Android and extends the standard 
 Titanium iOS WebView API to match.
 
+## Usage
+
+##### Using the module in a Alloy-view
+
+```xml
+<WebView id="webView" platform="ios" />
+<WebView id="webView" platform="android" module="com.universalavenue.ticrosswalk" />
+```
+
+##### Creating a webView directly
+
+```js
+function createWebView (props) {
+  if (OS_ANDROID) {
+    var xwalk = require('com.universalavenue.ticrosswalk');
+    return xwalk.createWebView(props);
+  }
+  return Ti.UI.createWebView(props);
+}
+
+var win = Ti.UI.createWindow(),
+    webView = createWebView({ url: 'https://universalavenue.com' });
+win.add(webView);
+win.open();
+```
+
+##### Evaluating JS
+
+Use the `evalAsync(code, [callback])` method to evaluate JS inside the WebView without blocking the main thread. This is a major speed boost, especially on Android.
+
+```js
+var code = '(function(arg){ return { some: "object", arg: arg }; })(["<your args>"])';
+webView.evalAsync(code, function (res) {
+  var obj = res && JSON.parse(res);
+});
+```
+
+The iOS version of this module simply extends the existing Titanium WebView, meaning you can use the same APIs as on Android.
+
+**Note:** The behavior of evalAsync differ a bit between platforms. In order for things to work cross platform you need to wrap your call in an IIFE (like above) and make sure to skip the final semicolon! See issue #6 for details.
+
+
 ## Contributors
 
 **Jonatan Lundin**  
