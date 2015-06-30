@@ -22,6 +22,7 @@ import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollProxy;
 import org.appcelerator.kroll.common.Log;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -150,6 +151,10 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	public String getJSValue(String expression)
 	{
 		return binding.getJSValue(expression);
+	}
+
+	public void onCreate(Activity activity, Bundle savedInstanceState) {
+		Log.i(LCAT, "onCreate");
 	}
 
 	@Override
