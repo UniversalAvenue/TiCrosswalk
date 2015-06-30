@@ -8,6 +8,10 @@
 
 package com.universalavenue.ticrosswalk;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import org.appcelerator.titanium.TiApplication;
@@ -16,7 +20,10 @@ import org.appcelerator.titanium.view.TiUIView;
 import org.appcelerator.titanium.view.TiBackgroundDrawable;
 import org.appcelerator.titanium.TiLifecycle.OnLifecycleEvent;
 import org.appcelerator.titanium.util.TiConvert;
+import org.appcelerator.titanium.util.TiMimeTypeHelper;
 import org.appcelerator.titanium.TiC;
+import org.appcelerator.titanium.io.TiBaseFile;
+import org.appcelerator.titanium.io.TiFileFactory;
 
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollProxy;
@@ -30,6 +37,7 @@ import android.view.TextureView;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 
 import org.xwalk.core.XWalkView;
 import org.xwalk.core.XWalkNavigationHistory.Direction;
@@ -134,11 +142,83 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	}
 
 
+	private boolean mightBeHtml(String url)
+	{
+		String mime = TiMimeTypeHelper.getMimeType(url);
+		if (mime.equals("text/html")) {
+			return true;
+		} else if (mime.equals("application/xhtml+xml")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void setUrl(String url)
 	{
-		Log.d(LCAT, "Loading new url: " + url);
-		XWalkView view = getXWalkView();
-		view.load(url, null);
+		String finalUrl = url;
+		Uri uri = Uri.parse(finalUrl);
+		boolean originalUrlHasScheme = (uri.getScheme() != null);
+
+		if (!originalUrlHasScheme) {
+			finalUrl = getProxy().resolveUrl(null, finalUrl);
+		}
+
+		if (TiFileFactory.isLocalScheme(finalUrl) && mightBeHtml(finalUrl)) {
+			TiBaseFile tiFile = TiFileFactory.createTitaniumFile(finalUrl, false);
+			if (tiFile != null) {
+				StringBuilder out = new StringBuilder();
+				InputStream fis = null;
+				boolean bindingCodeInjected = false;
+
+				try {
+					fis = tiFile.getInputStream();
+					InputStreamReader reader = new InputStreamReader(fis, "utf-8");
+					BufferedReader breader = new BufferedReader(reader);
+					String line = breader.readLine();
+					while (line != null) {
+						if (!bindingCodeInjected) {
+							int pos = line.indexOf("<html");
+							if (pos >= 0) {
+								int posEnd = line.indexOf(">", pos);
+								if (posEnd > pos) {
+									out.append(line.substring(pos, posEnd + 1));
+									out.append(binding.SCRIPT_TAG_INJECTION_CODE);
+									if ((posEnd + 1) < line.length()) {
+										out.append(line.substring(posEnd + 1));
+									}
+									out.append("\n");
+									bindingCodeInjected = true;
+									line = breader.readLine();
+									continue;
+								}
+							}
+						}
+						out.append(line);
+						out.append("\n");
+						line = breader.readLine();
+					}
+					// keep app:// etc. intact in case html in file contains links to JS that use app:// etc.
+					getXWalkView().load((originalUrlHasScheme ? url : finalUrl), out.toString());
+					return;
+
+				} catch (IOException ioe) {
+					Log.e(LCAT, "Problem reading from " + url + ": " + ioe.getMessage()
+							+ ". Will let WebView try loading it directly.", ioe);
+				} finally {
+					if (fis != null) {
+						try {
+							fis.close();
+						} catch (IOException e) {
+							Log.w(LCAT, "Problem closing stream: " + e.getMessage(), e);
+						}
+					}
+				}
+			}
+		}
+
+		Log.d(LCAT, "WebView will load " + url + " directly.", Log.DEBUG_MODE);
+		getXWalkView().load(url, null);
 	}
 
 	public void setHtml(String html)
