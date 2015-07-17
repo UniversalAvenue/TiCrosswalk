@@ -16,6 +16,7 @@ import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
 
 import org.xwalk.core.XWalkPreferences;
+import org.chromium.base.CommandLine;
 
 @Kroll.module(name="TiCrosswalk", id="com.universalavenue.ticrosswalk")
 public class TiCrosswalkModule extends KrollModule
@@ -24,6 +25,7 @@ public class TiCrosswalkModule extends KrollModule
 	// Standard Debugging variables
 	private static final String LCAT = "TiCrosswalkModule";
 	private static final boolean DBG = TiConfig.LOGD;
+	private static final String INIT_SWITCHES[] = { "Xwalk", "--disable-pull-to-refresh-effect"};
 
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
@@ -36,6 +38,12 @@ public class TiCrosswalkModule extends KrollModule
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app)
 	{
+		if (!CommandLine.isInitialized()) {
+			CommandLine.init(INIT_SWITCHES);
+		} else {
+			CommandLine.getInstance().appendSwitch("--disable-pull-to-refresh-effect");
+		}
+
 		XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
 		XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
 		XWalkPreferences.setValue(XWalkPreferences.ALLOW_UNIVERSAL_ACCESS_FROM_FILE, true);
