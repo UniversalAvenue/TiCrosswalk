@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"አጋራ"</string>
 <string name="actionbar_web_search">"የድር ፍለጋ"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"ቪዲዮ ማጫወት አልተቻለም"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"ይቅርታ፣ ይህ ቪዲዮ ወደዚህ መሣሪያ በዥረት ለመልቀቅ ልክ የሆነ አይደለም።"</string>
 <string name="media_player_error_text_unknown">"ይቅርታ፣ ይህ ቪዲዮ ሊጫወት አልቻለም።"</string>

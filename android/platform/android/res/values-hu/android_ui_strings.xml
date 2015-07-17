@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Egyéb"</string>
 <string name="date_picker_dialog_title">"Dátum beállítása"</string>
 <string name="date_picker_dialog_clear">"Törlés"</string>
+<string name="autofill_popup_content_description">"Automatikus kitöltés előugró ablakának megjelenítése"</string>
+<string name="password_generation_popup_content_description">"Jelszógenerálás előugró ablakának megjelenítése"</string>
 </resources>

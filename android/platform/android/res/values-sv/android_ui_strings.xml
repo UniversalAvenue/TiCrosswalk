@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Övrigt"</string>
 <string name="date_picker_dialog_title">"Ange datum"</string>
 <string name="date_picker_dialog_clear">"Rensa"</string>
+<string name="autofill_popup_content_description">"Visar popupfönster för Autofyll"</string>
+<string name="password_generation_popup_content_description">"Visar popupfönster för lösenordsgenerering"</string>
 </resources>

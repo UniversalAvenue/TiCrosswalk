@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Comparteix"</string>
 <string name="actionbar_web_search">"Cerca al web"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"No es pot reproduir el vídeo"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Aquest vídeo no és vàlid per reproduir-lo en temps real en aquest dispositiu."</string>
 <string name="media_player_error_text_unknown">"No es pot reproduir aquest vídeo."</string>

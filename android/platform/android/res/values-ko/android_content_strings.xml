@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"공유"</string>
 <string name="actionbar_web_search">"웹 검색"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"동영상 재생 안됨"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"죄송합니다. 이 동영상은 이 기기로 스트리밍할 수 없습니다."</string>
 <string name="media_player_error_text_unknown">"동영상을 재생할 수 없습니다."</string>

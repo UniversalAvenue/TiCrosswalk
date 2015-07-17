@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Altele"</string>
 <string name="date_picker_dialog_title">"Setați data"</string>
 <string name="date_picker_dialog_clear">"Ștergeți"</string>
+<string name="autofill_popup_content_description">"Fereastra pop-up pentru completarea automată este afișată"</string>
+<string name="password_generation_popup_content_description">"Fereastra pop-up pentru generarea parolelor este afișată"</string>
 </resources>

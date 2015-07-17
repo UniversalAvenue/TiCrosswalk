@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Andet"</string>
 <string name="date_picker_dialog_title">"Angiv dato"</string>
 <string name="date_picker_dialog_clear">"Ryd"</string>
+<string name="autofill_popup_content_description">"Viser pop op for AutoFyld"</string>
+<string name="password_generation_popup_content_description">"Viser pop op for generering af adgangskoder"</string>
 </resources>

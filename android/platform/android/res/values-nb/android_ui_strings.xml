@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Annet"</string>
 <string name="date_picker_dialog_title">"Angi dato"</string>
 <string name="date_picker_dialog_clear">"Tøm"</string>
+<string name="autofill_popup_content_description">"Viser forgrunnsvinduet for autofyll"</string>
+<string name="password_generation_popup_content_description">"Viser forgrunnsvinduet for passordgenerering"</string>
 </resources>

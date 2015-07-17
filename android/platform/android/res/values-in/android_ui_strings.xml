@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Lainnya"</string>
 <string name="date_picker_dialog_title">"Setel tanggal"</string>
 <string name="date_picker_dialog_clear">"Hapus"</string>
+<string name="autofill_popup_content_description">"Menampilkan munculan isi otomatis"</string>
+<string name="password_generation_popup_content_description">"Menampilkan munculan pembuatan sandi"</string>
 </resources>

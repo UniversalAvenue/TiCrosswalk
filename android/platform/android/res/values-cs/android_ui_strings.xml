@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Ostatní"</string>
 <string name="date_picker_dialog_title">"Nastavení data"</string>
 <string name="date_picker_dialog_clear">"Vymazat"</string>
+<string name="autofill_popup_content_description">"Je zobrazeno vyskakovací okno automatického vyplňování"</string>
+<string name="password_generation_popup_content_description">"Je zobrazeno vyskakovací okno generování hesla"</string>
 </resources>

@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Ostalo"</string>
 <string name="date_picker_dialog_title">"Postavite datum"</string>
 <string name="date_picker_dialog_clear">"Izbriši"</string>
+<string name="autofill_popup_content_description">"Prikazuje se skočni prozor automatskog popunjavanja"</string>
+<string name="password_generation_popup_content_description">"Prikazuje se skočni prozor generiranja zaporke"</string>
 </resources>

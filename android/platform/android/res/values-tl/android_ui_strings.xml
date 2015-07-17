@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Iba pa"</string>
 <string name="date_picker_dialog_title">"Magtakda ng petsa"</string>
 <string name="date_picker_dialog_clear">"I-clear"</string>
+<string name="autofill_popup_content_description">"Ipinapakita ang popup na autofill"</string>
+<string name="password_generation_popup_content_description">"Ipinapakita ang popup para sa pagbuo ng password"</string>
 </resources>

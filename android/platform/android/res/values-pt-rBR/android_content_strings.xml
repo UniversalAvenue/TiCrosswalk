@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Compartilhar"</string>
 <string name="actionbar_web_search">"Pesquisa da Web"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Não é possível reproduzir vídeo"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Não é possível realizar o streaming deste vídeo para este dispositivo."</string>
 <string name="media_player_error_text_unknown">"Não é possível reproduzir este vídeo."</string>

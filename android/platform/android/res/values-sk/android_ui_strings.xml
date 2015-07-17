@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Iné"</string>
 <string name="date_picker_dialog_title">"Nastavenie dátumu"</string>
 <string name="date_picker_dialog_clear">"Vymazať"</string>
+<string name="autofill_popup_content_description">"Zobrazuje sa okno automatického dopĺňania"</string>
+<string name="password_generation_popup_content_description">"Zobrazuje sa okno generovania hesiel"</string>
 </resources>

@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"אחר"</string>
 <string name="date_picker_dialog_title">"הגדרת תאריך"</string>
 <string name="date_picker_dialog_clear">"נקה"</string>
+<string name="autofill_popup_content_description">"מציג את החלון הקופץ של מילוי אוטומטי"</string>
+<string name="password_generation_popup_content_description">"מציג את החלון הקופץ של יצירת סיסמה"</string>
 </resources>

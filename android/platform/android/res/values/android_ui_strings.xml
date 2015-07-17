@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Other"</string>
 <string name="date_picker_dialog_title">"Set date"</string>
 <string name="date_picker_dialog_clear">"Clear"</string>
+<string name="autofill_popup_content_description">"Showing autofill popup"</string>
+<string name="password_generation_popup_content_description">"Showing password generation popup"</string>
 </resources>

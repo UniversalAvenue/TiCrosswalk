@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Overige"</string>
 <string name="date_picker_dialog_title">"Datum instellen"</string>
 <string name="date_picker_dialog_clear">"Wissen"</string>
+<string name="autofill_popup_content_description">"Pop-upvenster van automatisch aanvullen wordt weergegeven"</string>
+<string name="password_generation_popup_content_description">"Pop-upvenster voor wachtwoord genereren wordt weergegeven"</string>
 </resources>

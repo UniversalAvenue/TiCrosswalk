@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"साझा करें"</string>
 <string name="actionbar_web_search">"वेब खोज"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"वीडियो नहीं चलाया जा सकता"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"क्षमा करें, यह वीडियो इस डिवाइस पर स्‍ट्रीम करने के लिए मान्य नहीं है."</string>
 <string name="media_player_error_text_unknown">"क्षमा करें, यह वीडियो नहीं चलाया जा सकता."</string>

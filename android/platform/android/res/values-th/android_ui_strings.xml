@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"อื่นๆ"</string>
 <string name="date_picker_dialog_title">"ตั้งวันที่"</string>
 <string name="date_picker_dialog_clear">"ล้าง"</string>
+<string name="autofill_popup_content_description">"กำลังแสดงป๊อปอัปการป้อนข้อความอัตโนมัติ"</string>
+<string name="password_generation_popup_content_description">"กำลังแสดงป๊อปอัปการสร้างรหัสผ่าน"</string>
 </resources>

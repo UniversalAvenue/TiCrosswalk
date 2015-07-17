@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Друго"</string>
 <string name="date_picker_dialog_title">"Задаване на датата"</string>
 <string name="date_picker_dialog_clear">"Изчистване"</string>
+<string name="autofill_popup_content_description">"Изскачащият прозорец за автоматично попълване е показан"</string>
+<string name="password_generation_popup_content_description">"Изскачащият прозорец за генериране на пароли е показан"</string>
 </resources>

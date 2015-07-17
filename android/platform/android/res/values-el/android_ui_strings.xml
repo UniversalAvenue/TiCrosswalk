@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Άλλο"</string>
 <string name="date_picker_dialog_title">"Ορισμός ημερομηνίας"</string>
 <string name="date_picker_dialog_clear">"Διαγραφή"</string>
+<string name="autofill_popup_content_description">"Εμφάνιση αναδυόμενου παραθύρου αυτόματης συμπλήρωσης"</string>
+<string name="password_generation_popup_content_description">"Εμφάνιση αναδυόμενου παραθύρου δημιουργίας κωδικού πρόσβασης"</string>
 </resources>

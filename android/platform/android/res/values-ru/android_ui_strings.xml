@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Другое"</string>
 <string name="date_picker_dialog_title">"Выберите дату"</string>
 <string name="date_picker_dialog_clear">"Очистить"</string>
+<string name="autofill_popup_content_description">"Открыто всплывающее окно автозаполнения"</string>
+<string name="password_generation_popup_content_description">"Открыто всплывающее окно создания пароля"</string>
 </resources>

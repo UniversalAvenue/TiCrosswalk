@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"その他"</string>
 <string name="date_picker_dialog_title">"日付の設定"</string>
 <string name="date_picker_dialog_clear">"クリア"</string>
+<string name="autofill_popup_content_description">"自動入力のポップアップを表示しています"</string>
+<string name="password_generation_popup_content_description">"パスワード作成のポップアップを表示しています"</string>
 </resources>

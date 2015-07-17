@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Shiriki"</string>
 <string name="actionbar_web_search">"Tafuta kwenye wavuti"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Haiwezi kucheza video"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Samahani, video hii sio sahihi kutiririshwa kwenye kifaa hiki."</string>
 <string name="media_player_error_text_unknown">"Samahani, video hii haiwezi kuchezwa."</string>

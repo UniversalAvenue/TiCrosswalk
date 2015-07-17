@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"أخرى"</string>
 <string name="date_picker_dialog_title">"تعيين التاريخ"</string>
 <string name="date_picker_dialog_clear">"محو"</string>
+<string name="autofill_popup_content_description">"عرض نافذة الملء التلقائي المنبثقة"</string>
+<string name="password_generation_popup_content_description">"عرض نافذة إنشاء كلمة المرور المنبثقة"</string>
 </resources>

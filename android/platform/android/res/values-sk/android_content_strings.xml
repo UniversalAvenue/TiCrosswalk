@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Zdieľať"</string>
 <string name="actionbar_web_search">"Vyhľadávanie na webe"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Video sa nedá prehrať"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Je nám to ľúto, ale toto video sa nedá streamovať do tohto zariadenia."</string>
 <string name="media_player_error_text_unknown">"Je nám to ľúto, ale toto video sa nedá prehrať."</string>

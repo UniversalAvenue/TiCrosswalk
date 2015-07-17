@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"기타"</string>
 <string name="date_picker_dialog_title">"날짜 설정"</string>
 <string name="date_picker_dialog_clear">"삭제"</string>
+<string name="autofill_popup_content_description">"자동완성 팝업 표시"</string>
+<string name="password_generation_popup_content_description">"비밀번호 생성 팝업 표시"</string>
 </resources>

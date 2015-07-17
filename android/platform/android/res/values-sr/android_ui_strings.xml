@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Друго"</string>
 <string name="date_picker_dialog_title">"Подесите датум"</string>
 <string name="date_picker_dialog_clear">"Обриши"</string>
+<string name="autofill_popup_content_description">"Приказивање искачућег прозора за аутоматско попуњавање"</string>
+<string name="password_generation_popup_content_description">"Приказивање искачућег прозора за генерисање лозинке"</string>
 </resources>

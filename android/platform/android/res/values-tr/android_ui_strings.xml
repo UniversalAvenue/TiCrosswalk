@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Diğer"</string>
 <string name="date_picker_dialog_title">"Tarihi ayarlayın"</string>
 <string name="date_picker_dialog_clear">"Temizle"</string>
+<string name="autofill_popup_content_description">"Otomatik doldur pop-up\'ı gösteriliyor"</string>
+<string name="password_generation_popup_content_description">"Şifre oluşturma pop-up\'ı gösteriliyor"</string>
 </resources>

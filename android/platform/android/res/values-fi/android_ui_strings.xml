@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Muu"</string>
 <string name="date_picker_dialog_title">"Aseta päivämäärä"</string>
 <string name="date_picker_dialog_clear">"Tyhjennä"</string>
+<string name="autofill_popup_content_description">"Automaattisen täytön ponnahdusikkuna on näkyvissä."</string>
+<string name="password_generation_popup_content_description">"Salasanojen luomisen ponnahdusikkuna on näkyvissä."</string>
 </resources>

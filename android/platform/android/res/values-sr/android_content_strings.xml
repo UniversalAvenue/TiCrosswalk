@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Дели"</string>
 <string name="actionbar_web_search">"Веб-претрага"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Није могуће пустити видео"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Жао нам је, овај видео није погодан за стриминг на овом уређају."</string>
 <string name="media_player_error_text_unknown">"Жао нам је, није могуће пустити овај видео."</string>

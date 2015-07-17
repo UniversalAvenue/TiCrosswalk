@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Kitas"</string>
 <string name="date_picker_dialog_title">"Nustatykite datą"</string>
 <string name="date_picker_dialog_clear">"Išvalyti"</string>
+<string name="autofill_popup_content_description">"Rodomas automatinio pildymo iššokantysis langas"</string>
+<string name="password_generation_popup_content_description">"Rodomas slaptažodžio generavimo iššokantysis langas"</string>
 </resources>

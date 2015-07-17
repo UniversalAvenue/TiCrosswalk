@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Ibahagi"</string>
 <string name="actionbar_web_search">"Paghahanap sa web"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Hindi ma-play ang video"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Paumanhin, di-wasto ang video na ito para sa pag-stream sa device na ito."</string>
 <string name="media_player_error_text_unknown">"Paumanhin, hindi mape-play ang video na ito."</string>

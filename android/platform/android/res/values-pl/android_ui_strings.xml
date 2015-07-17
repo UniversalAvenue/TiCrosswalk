@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Inne"</string>
 <string name="date_picker_dialog_title">"Ustaw datę"</string>
 <string name="date_picker_dialog_clear">"Wyczyść"</string>
+<string name="autofill_popup_content_description">"Pokazuję wyskakujące okienko autouzupełniania"</string>
+<string name="password_generation_popup_content_description">"Pokazuję wyskakujące okienko generowania hasła"</string>
 </resources>

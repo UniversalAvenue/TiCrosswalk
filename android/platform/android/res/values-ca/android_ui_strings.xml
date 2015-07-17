@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Altres"</string>
 <string name="date_picker_dialog_title">"Defineix la data"</string>
 <string name="date_picker_dialog_clear">"Esborra"</string>
+<string name="autofill_popup_content_description">"Es mostra la finestra emergent d\'emplenament automàtic"</string>
+<string name="password_generation_popup_content_description">"Es mostra la finestra emergent de generació de contrasenyes"</string>
 </resources>

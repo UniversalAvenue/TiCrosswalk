@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Teilen"</string>
 <string name="actionbar_web_search">"Websuche"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Videowiedergabe nicht möglich"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Leider ist dieses Video nicht für Streaming auf diesem Gerät gültig."</string>
 <string name="media_player_error_text_unknown">"Dieses Video kann leider nicht abgespielt werden."</string>

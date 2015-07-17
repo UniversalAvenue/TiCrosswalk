@@ -13,8 +13,4 @@
 <string name="http_auth_user_name">"Username"</string>
 <string name="http_auth_password">"Password"</string>
 <string name="http_auth_log_in">"Log In"</string>
-<string name="cpu_arch_mismatch_title">"Mismatch of CPU architecture for Crosswalk"</string>
-<string name="cpu_arch_mismatch_message">"Unfortunately this application was not created for %1$s based devices, please take a moment to notify the developer about it. Thanks."</string>
-<string name="goto_store_button_label">"Go to Google Play Store"</string>
-<string name="report_feedback_button_label">"Report to developer"</string>
 </resources>

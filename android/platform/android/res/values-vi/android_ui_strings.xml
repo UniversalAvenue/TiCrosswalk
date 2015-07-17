@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Khác"</string>
 <string name="date_picker_dialog_title">"Đặt ngày"</string>
 <string name="date_picker_dialog_clear">"Xóa"</string>
+<string name="autofill_popup_content_description">"Hiển thị cửa sổ bật lên tự động điền"</string>
+<string name="password_generation_popup_content_description">"Hiển thị cửa sổ bật lên tạo mật khẩu"</string>
 </resources>

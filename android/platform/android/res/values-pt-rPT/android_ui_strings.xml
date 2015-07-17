@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Outros"</string>
 <string name="date_picker_dialog_title">"Definir data"</string>
 <string name="date_picker_dialog_clear">"Limpar"</string>
+<string name="autofill_popup_content_description">"A mostrar pop-up de preenchimento automático"</string>
+<string name="password_generation_popup_content_description">"A mostrar pop-up de geração de palavra-passe"</string>
 </resources>

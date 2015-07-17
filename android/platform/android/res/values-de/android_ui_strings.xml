@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Sonstiges"</string>
 <string name="date_picker_dialog_title">"Datum festlegen"</string>
 <string name="date_picker_dialog_clear">"Löschen"</string>
+<string name="autofill_popup_content_description">"Pop-up-Fenster für AutoFill-Daten wird angezeigt."</string>
+<string name="password_generation_popup_content_description">"Pop-up-Fenster zur Passwortgenerierung wird angezeigt."</string>
 </resources>

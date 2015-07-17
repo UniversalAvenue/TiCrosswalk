@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Autre"</string>
 <string name="date_picker_dialog_title">"Définir la date"</string>
 <string name="date_picker_dialog_clear">"Effacer"</string>
+<string name="autofill_popup_content_description">"Affichage de la fenêtre contextuelle de saisie automatique"</string>
+<string name="password_generation_popup_content_description">"Affichage de la fenêtre contextuelle de génération de mot de passe"</string>
 </resources>

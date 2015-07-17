@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Chia sẻ"</string>
 <string name="actionbar_web_search">"Tìm kiếm trên web"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Không thể phát video"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Rất tiếc, video này không hợp lệ để phát trực tuyến sang thiết bị này."</string>
 <string name="media_player_error_text_unknown">"Rất tiếc, không thể phát video này."</string>

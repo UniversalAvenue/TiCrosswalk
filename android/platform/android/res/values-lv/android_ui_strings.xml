@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Cits"</string>
 <string name="date_picker_dialog_title">"Datuma iestatīšana"</string>
 <string name="date_picker_dialog_clear">"Notīrīt"</string>
+<string name="autofill_popup_content_description">"Tiek rādīts automātiskās aizpildes uznirstošais logs"</string>
+<string name="password_generation_popup_content_description">"Tiek rādīts paroles ģenerēšanas uznirstošais logs"</string>
 </resources>

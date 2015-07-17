@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Nyingine"</string>
 <string name="date_picker_dialog_title">"Weka tarehe"</string>
 <string name="date_picker_dialog_clear">"Futa"</string>
+<string name="autofill_popup_content_description">"Inaonyesha dirisha ibukizi la kujaza otomatiki"</string>
+<string name="password_generation_popup_content_description">"Inaonyesha dirisha ibukizi la uundaji wa nenosiri"</string>
 </resources>

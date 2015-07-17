@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Drugo"</string>
 <string name="date_picker_dialog_title">"Nastavitev datuma"</string>
 <string name="date_picker_dialog_clear">"Počisti"</string>
+<string name="autofill_popup_content_description">"Prikaz pojavnega okna za samodejno izpolnjevanje"</string>
+<string name="password_generation_popup_content_description">"Prikaz pojavnega okna za ustvarjanje gesel"</string>
 </resources>

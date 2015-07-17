@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="actionbar_share">"Del"</string>
 <string name="actionbar_web_search">"Nettsøk"</string>
-<string name="accessibility_content_view">"Web View"</string>
 <string name="media_player_error_title">"Kan ikke spille av videoen"</string>
 <string name="media_player_error_text_invalid_progressive_playback">"Beklager, videoen er ikke gyldig for strømming på denne enheten."</string>
 <string name="media_player_error_text_unknown">"Beklager, videoen kan ikke spilles av."</string>

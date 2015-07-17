@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"دیگر"</string>
 <string name="date_picker_dialog_title">"تنظیم تاریخ"</string>
 <string name="date_picker_dialog_clear">"پاک کردن"</string>
+<string name="autofill_popup_content_description">"نمایش پنجره تکمیل خودکار"</string>
+<string name="password_generation_popup_content_description">"نمایش پنجره تولید گذرواژه"</string>
 </resources>

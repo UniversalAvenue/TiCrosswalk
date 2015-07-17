@@ -41,4 +41,6 @@
 <string name="date_picker_dialog_other_button_label">"Otro"</string>
 <string name="date_picker_dialog_title">"Establecer fecha"</string>
 <string name="date_picker_dialog_clear">"Eliminar"</string>
+<string name="autofill_popup_content_description">"Mostrando la ventana emergente de Autocompletar"</string>
+<string name="password_generation_popup_content_description">"Mostrando la ventana emergente de generación de contraseña"</string>
 </resources>
