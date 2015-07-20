@@ -72,7 +72,6 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 
 		view.setResourceClient(resourceClient);
 		view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-		view.setBackgroundColor(0);
 		view.setFocusableInTouchMode(false);
 
 		// Set the view as the native view. You must set the native view
@@ -98,6 +97,13 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		} else if (props.containsKey(PROPERTY_URL)) {
 			setUrl(props.getString(PROPERTY_URL));
 		}
+
+		// If TiUIView's processProperties ended up making a TiBackgroundDrawable
+		// for the background, we must set the WebView background color to transparent
+		// in order to see any of it.
+		if (nativeView != null && nativeView.getBackground() instanceof TiBackgroundDrawable) {
+			nativeView.setBackgroundColor(Color.TRANSPARENT);
+		}
 	}
 
 	@Override
@@ -111,9 +117,17 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		}
 		if (key.equals(PROPERTY_URL)) {
 			setUrl((String) newValue);
+		} else {
+			super.propertyChanged(key, oldValue, newValue, proxy);
 		}
 
-		super.propertyChanged(key, oldValue, newValue, proxy);
+		// If TiUIView's propertyChanged ended up making a TiBackgroundDrawable
+		// for the background, we must set the WebView background color to transparent
+		// in order to see any of it.
+		boolean isBgRelated = (key.startsWith(TiC.PROPERTY_BACKGROUND_PREFIX) || key.startsWith(TiC.PROPERTY_BORDER_PREFIX));
+		if (isBgRelated && nativeView != null && nativeView.getBackground() instanceof TiBackgroundDrawable) {
+			nativeView.setBackgroundColor(Color.TRANSPARENT);
+		}
 	}
 
 	public XWalkView getXWalkView()
