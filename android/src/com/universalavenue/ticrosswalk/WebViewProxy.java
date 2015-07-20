@@ -8,7 +8,9 @@
 
 package com.universalavenue.ticrosswalk;
 
+import java.lang.Object;
 import java.lang.Runnable;
+import java.util.LinkedList;
 
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollModule;
@@ -53,8 +55,11 @@ public class WebViewProxy extends TiViewProxy
 
 	protected static final int MSG_LAST_ID = MSG_FIRST_ID + 999;
 
+	private LinkedList<Object[]> evalAsyncCallQueue;
+
 	public WebViewProxy() {
 		super();
+		evalAsyncCallQueue = new LinkedList<Object[]>();
 	}
 
 	@Override
@@ -63,6 +68,12 @@ public class WebViewProxy extends TiViewProxy
 		WebView view = new WebView(this);
 		view.getLayoutParams().autoFillsHeight = true;
 		view.getLayoutParams().autoFillsWidth = true;
+
+		while (!evalAsyncCallQueue.isEmpty()) {
+			Object[] call = evalAsyncCallQueue.removeFirst();
+			this.evalAsync(view, (String) call[0], (KrollFunction) call[1]);
+		}
+
 		return view;
 	}
 
@@ -206,10 +217,16 @@ public class WebViewProxy extends TiViewProxy
 		WebView view = getWebView();
 
 		if (view == null) {
-			Log.e(LCAT, "evalAsync failed, view not available");
+			Log.w(LCAT, "evalAsync failed, view not available. Will try again later.");
+			Object[] call = {code, callback};
+			evalAsyncCallQueue.add(call);
 			return;
 		}
 
+		evalAsync(view, code, callback);
+	}
+
+	private void evalAsync(final WebView view, final String code, KrollFunction callback) {
 		final KrollFunction _cb = callback;
 		final ValueCallback valueCallback = new ValueCallback<String>() {
 			@Override
@@ -225,10 +242,9 @@ public class WebViewProxy extends TiViewProxy
 			}
 		};
 
-		getActivity().runOnUiThread(new Runnable () {
+		getActivity().runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				WebView view = getWebView();
 				if (view != null) {
 					XWalkView webView = (XWalkView) view.getNativeView();
 					if (webView != null) {
