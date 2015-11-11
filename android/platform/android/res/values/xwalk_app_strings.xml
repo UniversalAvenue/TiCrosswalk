@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <string name="crosswalk_install_title">"Crosswalk Project Install"</string>
+<string name="decompression_progress_message">"Decompressing the Crosswalk Project runtime..."</string>
 <string name="download_progress_message">"Downloading the Crosswalk Project runtime from remote host..."</string>
 <string name="download_failed_message">"Download failed. A network error occurred."</string>
 <string name="download_failed_device_not_found">"Download failed. Storage device not found."</string>
