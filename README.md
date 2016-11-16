@@ -1,5 +1,8 @@
 # Titanium Crosswalk Module
 
+# No longer maintaned
+Since we no longer use Titanium this module is sadly no longer maintaned by us. If you want to take over maintanence please send an email to david@universalavenue.com and we can figure it out.
+
 ## Description
 
 A cross platform web view extension/replacement for Titanium Mobile that uses the fantastic 
