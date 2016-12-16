@@ -2,8 +2,8 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.3.0
-apiversion: 2
+version: 1.4.0
+apiversion: 3
 description: TiCrosswalk
 author: Jonatan Lundin
 license: Specify your license
@@ -17,4 +17,4 @@ name: TiCrosswalk
 moduleid: com.universalavenue.ticrosswalk
 guid: 5af1ea1e-f0e4-4c4f-b71d-f448865806c4
 platform: android
-minsdk: 5.0.1.GA
+minsdk: 6.0.0.GA

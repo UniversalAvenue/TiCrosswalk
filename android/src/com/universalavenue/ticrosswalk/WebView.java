@@ -48,6 +48,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	private static final String LCAT = "TiCrosswalk";
 
 	private static final String PROPERTY_URL = "url";
+	private static final String PROPERTY_USER_AGENT = "userAgent";
 	private static final String PROPERTY_HTML = "html";
 
 	private WebViewResourceClient resourceClient;
@@ -88,14 +89,18 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	@Override
 	public void processProperties(KrollDict props)
 	{
-		super.processProperties(props);
+		super.processProperties(props); 
 
-		Log.d(LCAT,"WebView created with props: " + props);
+		Log.d(LCAT,"WebView created with properties: " + props);
 
 		if (props.containsKey(PROPERTY_HTML)) {
 			setHtml(props.getString(PROPERTY_HTML));
 		} else if (props.containsKey(PROPERTY_URL)) {
 			setUrl(props.getString(PROPERTY_URL));
+		}
+
+		if (props.containsKey(PROPERTY_USER_AGENT)) {
+			setUserAgent(props.getString(PROPERTY_USER_AGENT));
 		}
 
 		// If TiUIView's processProperties ended up making a TiBackgroundDrawable
@@ -240,6 +245,14 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		Log.d(LCAT, "Loading html string");
 		XWalkView view = getXWalkView();
 		view.load("file://", html);
+	}
+
+	public void setUserAgent(String userAgent)
+	{
+		Log.d(LCAT, "set user agent");
+
+		XWalkView view = getXWalkView();
+		view.setUserAgentString(userAgent);
 	}
 
 	public String getJSValue(String expression)
