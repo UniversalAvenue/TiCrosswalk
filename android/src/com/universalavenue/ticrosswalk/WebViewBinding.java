@@ -21,7 +21,6 @@ import org.appcelerator.kroll.KrollLogging;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
-import org.appcelerator.titanium.TiContext;
 import org.appcelerator.titanium.util.TiConvert;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -102,10 +101,10 @@ public class WebViewBinding
 		addJavascriptInterfaces();
 	}
 
-	public WebViewBinding(TiContext tiContext, XWalkView webView)
-	{
-		this(webView);
-	}
+	//public WebViewBinding(XWalkView webView)
+	//{
+	//	this(webView);
+	//}
 
 	public void addJavascriptInterfaces()
 	{
